@@ -1,0 +1,29 @@
+* Personal javascript spacemacs layer 
+  Started from scratch. js-mode knows jsx now.
+** install
+   symlink into ~/.emacs.d/private/layers
+*** needs this variable set when including in dotspacemacs-configuration-layers
+    #+begin_src lisp
+      (tl-javascript :variables node-add-modules-path t)
+    #+end_src
+** js dependencies
+   #+begin_src sh
+     npm i -g eslint_d prettier tsserver
+   #+end_src
+   probably more
+*** package.json
+    something like this
+    #+begin_src  json
+      {
+        "devDependencies": {
+          "eslint-config-standard": "^12.0.0",
+          "standard": "^12.0.1"
+        },
+        "eslintConfig": {
+          "extends": "standard"
+        }
+      }
+    #+end_src
+*** jsconfig.json
+    just an empty one `{}` seems to be enough for tide. I don't know much about tide, but the autocomplete seems to be working well.
+
